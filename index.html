@@ -1,118 +1,204 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IBG Vision</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter', sans-serif; background:#0a0a0a; color:#fff; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBG Vision</title>
 
-    header {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:20px 40px; border-bottom:1px solid rgba(255,255,255,0.1);
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    .logo { font-size:20px; letter-spacing:2px; }
+body {
+  background: #fff;
+  color: #111;
+}
 
-    nav a {
-      margin-left:25px; text-decoration:none; color:#aaa;
-      font-size:14px; transition:0.3s;
-    }
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+}
 
-    nav a:hover { color:#fff; }
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
 
-    .hero {
-      height:90vh; display:flex; flex-direction:column;
-      justify-content:center; align-items:center; text-align:center;
-      padding:20px;
-    }
+.menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
 
-    .hero h1 { font-size:48px; font-weight:600; margin-bottom:20px; }
-    .hero p { color:#aaa; max-width:600px; }
+.menu a {
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+}
 
-    .btn {
-      margin-top:30px; padding:12px 30px;
-      border:1px solid #fff; background:transparent;
-      color:#fff; cursor:pointer; transition:0.3s;
-    }
+.btn {
+  border: 1px solid #111;
+  padding: 8px 15px;
+  font-size: 13px;
+}
 
-    .btn:hover { background:#fff; color:#000; }
+/* HERO */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url('https://images.unsplash.com/photo-1556761175-b413da4baf72') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+}
 
-    section { padding:80px 40px; }
+.overlay {
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  padding: 40px;
+}
 
-    .services {
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-      gap:30px;
-    }
+.hero h1 {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
 
-    .card {
-      border:1px solid rgba(255,255,255,0.1);
-      padding:30px; border-radius:12px;
-      transition:0.3s;
-    }
+.hero p {
+  color: #ddd;
+  font-size: 18px;
+}
 
-    .card:hover { border-color:#fff; }
+/* SECTION */
+.section {
+  padding: 60px 40px;
+}
 
-    .card h3 { margin-bottom:10px; }
-    .card p { color:#aaa; font-size:14px; }
+.section h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
 
-    footer {
-      border-top:1px solid rgba(255,255,255,0.1);
-      padding:30px 40px; text-align:center;
-      color:#666; font-size:14px;
-    }
+/* SERVICES */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-  </style>
+.service {
+  flex: 1 1 200px;
+  border-top: 2px solid #111;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+/* PORTFOLIO */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.portfolio img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+  color: #777;
+}
+
+</style>
 </head>
+
 <body>
 
-<header>
+<!-- NAVBAR -->
+<nav>
   <div class="logo">IBG VISION</div>
-  <nav>
-    <a href="#">Home</a>
+  <div class="menu">
     <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#reporting">Visual Reporting</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <div class="btn">Request Proposal</div>
+  </div>
+</nav>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Visual Documentation & Corporate Photography</h1>
-  <p>Profesionalno fotografisanje za kompanije, industriju i dokumentaciju procesa. Minimalizam. Preciznost. Kvalitet.</p>
-  <button class="btn">Kontakt</button>
-</section>
-
-<!-- Nova sekcija za autorsku fotografiju -->
-<section id="portfolio-link" style="padding:80px 40px; background:#111; text-align:center;">
-  <h2 style="margin-bottom:20px;">Autorska fotografija</h2>
-  <p>Za moj autorski rad posetite moj sajt:</p>
-  <a href="https://tvoj-sajt-sa-fotografijom.com" target="_blank" class="btn">Posetite moj portfolio</a>
-</section>
-
-<section id="services">
-  <h2 style="margin-bottom:40px;">Usluge</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Korporativno fotografisanje</h3>
-      <p>Portreti zaposlenih, kancelarijski ambijent i branding fotografije.</p>
-    </div>
-    <div class="card">
-      <h3>Industrijska fotografija</h3>
-      <p>Dokumentovanje proizvodnje, postrojenja i radnih procesa.</p>
-    </div>
-    <div class="card">
-      <h3>Vizuelna dokumentacija</h3>
-      <p>Foto izveštaji, photo log i arhiviranje za kompanije.</p>
-    </div>
+  <div class="overlay">
+    <h1>VISUAL INTELLIGENCE FOR BUSINESS</h1>
+    <p>Corporate Portraits, Dynamic Operations & Precise Reporting</p>
   </div>
 </section>
 
-<section id="contact">
-  <h2 style="margin-bottom:20px;">Kontakt</h2>
-  <p>Email: ibgvsn@gmail.com</p>
+<!-- SERVICES -->
+<section class="section" id="services">
+  <h2>OUR EXPERTISE</h2>
+  <div class="services">
+    <div class="service">Corporate Identity</div>
+    <div class="service">Executive Portraits</div>
+    <div class="service">Event Documentation</div>
+    <div class="service">Dynamic Reporting</div>
+    <div class="service">Technical Inspection</div>
+  </div>
 </section>
 
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <h2>PORTFOLIO</h2>
+  <div class="portfolio">
+    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+  </div>
+</section>
+
+<!-- REPORTING -->
+<section class="section" id="reporting">
+  <h2>VISUAL REPORTING</h2>
+  <p>Professional photo documentation for industrial processes, inspections, and logistics tracking.</p>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <h2>ABOUT</h2>
+  <p>IBG Vision delivers high-end visual solutions for businesses, combining corporate photography with precise reporting.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <h2>CONTACT</h2>
+  <p>Email: ibgvision@gmail.com</p>
+  <p>Pančevo, Serbia</p>
+</section>
+
+<!-- FOOTER -->
 <footer>
   © 2026 IBG Vision. All rights reserved.
 </footer>
