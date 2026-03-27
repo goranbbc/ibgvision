@@ -25,7 +25,7 @@
             padding: 20px;
         }
 
-        /* Glavni kontejner sa zaobljenim ivicama */
+        /* Glavni kontejner */
         .main-card {
             background: white;
             border-radius: 40px;
@@ -50,7 +50,10 @@
             text-transform: uppercase;
         }
 
-        .logo span { font-weight: 300; margin-left: 5px; }
+        .logo span { 
+            font-weight: 300; 
+            margin-left: 5px; 
+        }
 
         nav ul {
             display: flex;
@@ -83,7 +86,7 @@
             border-color: var(--text-dark);
         }
 
-        /* Hero Sekcija */
+        /* Hero */
         .hero {
             position: relative;
             margin: 0 20px;
@@ -120,12 +123,20 @@
             opacity: 0.9;
         }
 
-        /* Donji deo brendinga */
+        /* IMAGO link */
         .branding-footer {
             padding: 40px 50px;
             display: flex;
             justify-content: flex-end;
             text-align: right;
+        }
+
+        .imago-logo {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .imago-logo h2 {
@@ -143,6 +154,11 @@
             margin-top: 5px;
         }
 
+        .imago-logo:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             nav, .btn-proposal { display: none; }
@@ -155,6 +171,7 @@
     <div class="main-card">
         <header>
             <div class="logo">IBG<span>VISION</span></div>
+
             <nav>
                 <ul>
                     <li><a href="#">Services</a></li>
@@ -164,6 +181,7 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+
             <a href="#" class="btn-proposal">Request Proposal</a>
         </header>
 
@@ -176,10 +194,10 @@
         </section>
 
         <section class="branding-footer">
-            <div class="imago-logo">
+            <a href="https://www.imagobygorus.com" target="_blank" class="imago-logo">
                 <h2>IMAGO BY GORUS</h2>
                 <p>fine art portfolio</p>
-            </div>
+            </a>
         </section>
     </div>
 
