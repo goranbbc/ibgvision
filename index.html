@@ -1,205 +1,239 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IBG VISION | Corporate Visuals</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #f2f1ef;
-            --text-dark: #1a1a1a;
-            --accent-border: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBG VISION | Corporate Visuals</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-color: #f2f1ef;
+    --text-dark: #1a1a1a;
+    --accent-border: #333;
+    --accent-color: #1a1a1a;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            padding: 20px;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
 
-        /* Glavni kontejner */
-        .main-card {
-            background: white;
-            border-radius: 40px;
-            overflow: hidden;
-            max-width: 1400px;
-            margin: 0 auto;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-        }
+/* Glavni kontejner */
+.main-card {
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-        /* Navigacija */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 50px;
-        }
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-        }
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
 
-        .logo span { 
-            font-weight: 300; 
-            margin-left: 5px; 
-        }
+.logo span { font-weight: 300; margin-left: 5px; }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
 
-        .btn-proposal {
-            border: 1px solid #ccc;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 13px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
+.btn-proposal {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
 
-        .btn-proposal:hover {
-            background: var(--text-dark);
-            color: white;
-            border-color: var(--text-dark);
-        }
+.btn-proposal:hover {
+    background: var(--text-dark);
+    color: white;
+    border-color: var(--text-dark);
+}
 
-        /* Hero */
-        .hero {
-            position: relative;
-            margin: 0 20px;
-            height: 600px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
+/* Hero */
+.hero {
+    position: relative;
+    margin: 20px;
+    height: 600px;
+    border-radius: 5px;
+    overflow: hidden;
+}
 
-        .hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.8);
-        }
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
 
-        .hero-overlay {
-            position: absolute;
-            bottom: 60px;
-            left: 50px;
-            color: white;
-            max-width: 800px;
-        }
+.hero-overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 50px;
+    color: white;
+    max-width: 800px;
+}
 
-        .hero-overlay h1 {
-            font-size: 48px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+.hero-overlay h1 { font-size: 48px; font-weight: 600; margin-bottom: 10px; }
+.hero-overlay p { font-size: 22px; font-weight: 300; opacity: 0.9; }
 
-        .hero-overlay p {
-            font-size: 22px;
-            font-weight: 300;
-            opacity: 0.9;
-        }
+/* Sekcije */
+section {
+    padding: 80px 50px;
+    background: white;
+    margin: 20px;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
 
-        /* IMAGO link */
-        .branding-footer {
-            padding: 40px 50px;
-            display: flex;
-            justify-content: flex-end;
-            text-align: right;
-        }
+section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+}
 
-        .imago-logo {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.service-item {
+    margin-bottom: 30px;
+}
 
-        .imago-logo h2 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            line-height: 1;
-        }
+.service-item h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 
-        .imago-logo p {
-            font-size: 18px;
-            font-weight: 300;
-            color: #666;
-            margin-top: 5px;
-        }
+.service-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
 
-        .imago-logo:hover {
-            transform: translateY(-3px);
-            opacity: 0.8;
-        }
+/* Branding footer */
+.branding-footer {
+    padding: 40px 50px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    margin-bottom: 40px;
+}
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            nav, .btn-proposal { display: none; }
-            .hero-overlay h1 { font-size: 32px; }
-        }
-    </style>
+.imago-logo {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.imago-logo h2 { font-size: 32px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; line-height: 1; }
+.imago-logo p { font-size: 18px; font-weight: 300; color: #666; margin-top: 5px; }
+.imago-logo:hover { transform: translateY(-3px); opacity: 0.8; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    nav, .btn-proposal { display: none; }
+    .hero-overlay h1 { font-size: 32px; }
+}
+</style>
 </head>
 <body>
 
-    <div class="main-card">
-        <header>
-            <div class="logo">IBG<span>VISION</span></div>
+<div class="main-card">
+    <header>
+        <div class="logo">IBG<span>VISION</span></div>
 
-            <nav>
-                <ul>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Visual Documentation</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#visual-reporting">Visual Documentation</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
 
-            <a href="#" class="btn-proposal">Request Proposal</a>
-        </header>
+        <a href="#" class="btn-proposal">Request Proposal</a>
+    </header>
 
-        <section class="hero">
-            <img src="TVOJA_SLIKA.jpg" alt="Business Meeting">
-            <div class="hero-overlay">
-                <h1>VISUAL INTELLIGENCE FOR BUSINESS |</h1>
-                <p>Corporate Portraits, Dynamic Operations & Precise Reporting</p>
-            </div>
-        </section>
+    <section class="hero">
+        <img src="TVOJA_SLIKA.jpg" alt="Business Meeting">
+        <div class="hero-overlay">
+            <h1>VISUAL INTELLIGENCE FOR BUSINESS |</h1>
+            <p>Corporate Portraits, Dynamic Operations & Precise Reporting</p>
+        </div>
+    </section>
 
-        <section class="branding-footer">
-            <a href="https://www.imagobygorus.com" target="_blank" class="imago-logo">
-                <h2>IMAGO BY GORUS</h2>
-                <p>Fine Art & Personal Work</p>
-            </a>
-        </section>
-    </div>
+    <!-- Services -->
+    <section id="services">
+        <h2>Services</h2>
+
+        <div class="service-item">
+            <h3>01. Corporate Portraiture</h3>
+            <p><strong>Elevating Professional Identity.</strong> Mi ne pravimo samo fotografije zaposlenih; mi kreiramo vizuelni autoritet vašeg tima. Specijalizovani za portrete lidera i timova koji odišu poverenjem, stručnošću i modernom korporativnom estetikom.</p>
+            <p><em>Idealno za:</em> Godišnje izveštaje, LinkedIn profile i "About Us" sekcije.</p>
+        </div>
+
+        <div class="service-item">
+            <h3>02. Dynamic Industrial Photography</h3>
+            <p><strong>Precision in Motion.</strong> Dokumentovanje složenih industrijskih procesa zahteva oko za detalj i razumevanje operacija. Beležimo inovaciju u vašim pogonima, od automatizovanih linija do stručnog kadra, kreirajući moćan vizuelni materijal za vaš marketing i prezentacije.</p>
+            <p><em>Fokus:</em> Fabrički pogoni, energetska postrojenja i moderna infrastruktura.</p>
+        </div>
+
+        <div class="service-item">
+            <h3>03. Architectural & Workspace Design</h3>
+            <p><strong>Defining Your Environment.</strong> Vaš poslovni prostor je ogledalo vašeg uspeha. Kroz igru svetla i minimalističku kompoziciju, transformišemo enterijere i eksterijere u vrhunske vizuelne priče koje privlače klijente i talente.</p>
+            <p><em>Specijalnost:</em> Moderni kancelarijski prostori i industrijski objekti.</p>
+        </div>
+    </section>
+
+    <!-- Visual Reporting -->
+    <section id="visual-reporting">
+        <h2>Visual Reporting</h2>
+        <p><strong>Visual Intelligence & Logistics Control</strong> – Beyond Photography. Towards Standardization.</p>
+        <p>Ovo nije umetnost – ovo je operativna sigurnost. Pružamo specijalizovanu uslugu vizuelne dokumentacije protoka robe (prijem i otprema) koja služi kao neoboriv dokaz u lancu snabdevanja.</p>
+
+        <ul>
+            <li><strong>Logistics Transparency:</strong> Vizuelna potvrda stanja robe u realnom vremenu.</li>
+            <li><strong>Risk Mitigation:</strong> Drastično smanjenje troškova nastalih oštećenjima ili reklamacijama.</li>
+            <li><strong>ISO Alignment:</strong> Dokumentacija usklađena sa najvišim standardima kontrole kvaliteta.</li>
+            <li><strong>Professional Reporting:</strong> Mesečni izveštaji koji vašem menadžmentu daju jasnu sliku o operacijama.</li>
+        </ul>
+    </section>
+
+    <section class="branding-footer">
+        <a href="https://www.imagobygorus.com" target="_blank" class="imago-logo">
+            <h2>IMAGO BY GORUS</h2>
+            <p>Fine Art & Personal Work</p>
+        </a>
+    </section>
+</div>
 
 </body>
 </html>
