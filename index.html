@@ -1,236 +1,354 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IBG VISION | Corporate Visuals</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-    --bg-color: #f2f1ef;
-    --text-dark: #1a1a1a;
-    --accent-border: #333;
-    --accent-color: #1a1a1a;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBG VISION | Corporate Visual Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-dark: #121212;
+            --accent-color: #000000;
+            --white: #ffffff;
+            --soft-gray: #ececec;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-dark);
-    scroll-behavior: smooth;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
 
-/* Glavni kontejner */
-.main-card {
-    max-width: 1400px;
-    margin: 0 auto;
-}
+        .main-card {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 50px;
-    background: white;
-    border-radius: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-}
+        /* --- NAVIGATION --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px); /* Glassmorphism efekat */
+            margin-bottom: 20px;
+            border-radius: 100px; /* Potpuno zaobljeno za ultra-moderan izgled */
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
 
-.logo {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-}
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
 
-.logo span { font-weight: 300; margin-left: 5px; }
+        .logo span { font-weight: 300; color: #666; }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
 
-nav ul li a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-size: 13px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+        }
 
-.btn-proposal {
-    border: 1px solid #ccc;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: var(--text-dark);
-    font-size: 13px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
+        nav ul li a:hover { color: #888; }
 
-.btn-proposal:hover {
-    background: var(--text-dark);
-    color: white;
-    border-color: var(--text-dark);
-}
+        .btn-proposal {
+            background: var(--text-dark);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
 
-/* Hero */
-.hero {
-    position: relative;
-    margin: 20px;
-    height: 600px;
-    border-radius: 5px;
-    overflow: hidden;
-}
+        .btn-proposal:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.8);
-}
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 80vh;
+            border-radius: 40px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
 
-.hero-overlay {
-    position: absolute;
-    bottom: 60px;
-    left: 50px;
-    color: white;
-    max-width: 800px;
-}
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.05); /* Suptilan zoom efekt */
+        }
 
-.hero-overlay h1 { font-size: 48px; font-weight: 600; margin-bottom: 10px; }
-.hero-overlay p { font-size: 22px; font-weight: 300; opacity: 0.9; }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+        }
 
-/* Sekcije */
-section {
-    padding: 80px 50px;
-    background: white;
-    margin: 20px;
-    border-radius: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-}
+        .hero-overlay {
+            position: absolute;
+            bottom: 80px;
+            left: 80px;
+            color: var(--white);
+            z-index: 10;
+            max-width: 900px;
+        }
 
-section h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: var(--accent-color);
-}
+        .hero-overlay h1 { 
+            font-size: clamp(40px, 6vw, 72px); 
+            font-weight: 700; 
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
 
-.service-item {
-    margin-bottom: 30px;
-}
+        .hero-overlay p { 
+            font-size: 20px; 
+            font-weight: 300; 
+            letter-spacing: 0.5px;
+            opacity: 0.8; 
+        }
 
-.service-item h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
+        /* --- SECTIONS --- */
+        section.content-block {
+            padding: 120px 80px;
+            background: var(--white);
+            margin-bottom: 30px;
+            border-radius: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
 
-.service-item p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-}
+        .section-tag {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #bbb;
+            display: block;
+            margin-bottom: 20px;
+        }
 
-/* Branding footer */
-.branding-footer {
-    padding: 40px 50px;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-    margin-bottom: 40px;
-}
+        h2.section-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            letter-spacing: -1px;
+        }
 
-.imago-logo {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 80px;
+        }
 
-.imago-logo h2 { font-size: 32px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; line-height: 1; }
-.imago-logo p { font-size: 18px; font-weight: 300; color: #666; margin-top: 5px; }
-.imago-logo:hover { transform: translateY(-3px); opacity: 0.8; }
+        .service-item h3 {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: #000;
+            border-bottom: 1px solid var(--soft-gray);
+            padding-bottom: 15px;
+        }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    nav, .btn-proposal { display: none; }
-    .hero-overlay h1 { font-size: 32px; }
-}
-</style>
+        .service-item p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Visual Reporting - Dark Mode */
+        #visual-reporting {
+            background: var(--text-dark);
+            color: var(--white);
+        }
+
+        #visual-reporting .intro-text {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 50px;
+            line-height: 1.3;
+        }
+
+        .reporting-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .report-card {
+            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .report-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-10px);
+        }
+
+        .report-card strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        /* --- FOOTER (IMAGO BY GORUS) --- */
+        .branding-footer {
+            padding: 100px 80px;
+            display: flex;
+            justify-content: center; /* Centrirano za bolji vizuelni finiš */
+        }
+
+        .imago-logo {
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+            /* MONTSERRAT FONT SPECIFIČNO ZA OVAJ BREND */
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+        }
+
+        .imago-logo h2 { 
+            font-size: 48px; 
+            font-weight: 800; 
+            letter-spacing: 5px; 
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .imago-logo p { 
+            font-size: 12px; 
+            font-weight: 300; 
+            text-transform: uppercase; 
+            letter-spacing: 8px;
+            color: #888;
+        }
+
+        .imago-logo:hover {
+            opacity: 0.6;
+            letter-spacing: 10px;
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 900px) {
+            header { padding: 15px 30px; width: calc(100% - 40px); }
+            nav, .btn-proposal { display: none; }
+            section.content-block { padding: 60px 40px; }
+            .hero-overlay { left: 40px; bottom: 40px; }
+            .imago-logo h2 { font-size: 32px; }
+        }
+    </style>
 </head>
 <body>
 
 <div class="main-card">
     <header>
         <div class="logo">IBG<span>VISION</span></div>
-
         <nav>
             <ul>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#visual-reporting">Visual Documentation</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#visual-reporting">Visual Reporting</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </nav>
-
-        <a href="#" class="btn-proposal">Request Proposal</a>
+        <a href="#contact" class="btn-proposal">Get in Touch</a>
     </header>
 
     <section class="hero">
-        <img src="TVOJA_SLIKA.jpg" alt="Business Meeting">
+        <img src="Business leadership meets industrial innovation.jpg" alt="Business Intelligence">
         <div class="hero-overlay">
-            <h1>VISUAL INTELLIGENCE FOR BUSINESS |</h1>
-            <p>Corporate Portraits, Dynamic Operations & Precise Reporting</p>
+            <h1>VISUAL<br>INTELLIGENCE.</h1>
+            <p>High-end corporate visuals and logistics reporting.</p>
         </div>
     </section>
 
-    <!-- Services -->
-    <section id="services">
-        <h2>Services</h2>
-
-        <div class="service-item">
-            <h3>01. Corporate Portraiture</h3>
-            <p><strong>Elevating Professional Identity.</strong> Mi ne pravimo samo fotografije zaposlenih; mi kreiramo vizuelni autoritet vašeg tima. Specijalizovani za portrete lidera i timova koji odišu poverenjem, stručnošću i modernom korporativnom estetikom.</p>
-            <p><em>Idealno za:</em> Godišnje izveštaje, LinkedIn profile i "About Us" sekcije.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>02. Dynamic Industrial Photography</h3>
-            <p><strong>Precision in Motion.</strong> Dokumentovanje složenih industrijskih procesa zahteva oko za detalj i razumevanje operacija. Beležimo inovaciju u vašim pogonima, od automatizovanih linija do stručnog kadra, kreirajući moćan vizuelni materijal za vaš marketing i prezentacije.</p>
-            <p><em>Fokus:</em> Fabrički pogoni, energetska postrojenja i moderna infrastruktura.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>03. Architectural & Workspace Design</h3>
-            <p><strong>Defining Your Environment.</strong> Vaš poslovni prostor je ogledalo vašeg uspeha. Kroz igru svetla i minimalističku kompoziciju, transformišemo enterijere i eksterijere u vrhunske vizuelne priče koje privlače klijente i talente.</p>
-            <p><em>Specijalnost:</em> Moderni kancelarijski prostori i industrijski objekti.</p>
+    <section id="services" class="content-block">
+        <span class="section-tag">01. Expertise</span>
+        <h2 class="section-title">Core Solutions</h2>
+        
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Corporate Portraiture</h3>
+                <p>Mi kreiramo vizuelni autoritet vašeg tima. Specijalizovani za portrete lidera koji odišu poverenjem.</p>
+            </div>
+            <div class="service-item">
+                <h3>Industrial Photography</h3>
+                <p>Beležimo inovaciju u vašim pogonima, od automatizovanih linija do stručnog kadra na terenu.</p>
+            </div>
+            <div class="service-item">
+                <h3>Architecture</h3>
+                <p>Vaš poslovni prostor je ogledalo vašeg uspeha. Dokumentujemo moderni dizajn vaših objekata.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Visual Reporting -->
-    <section id="visual-reporting">
-        <h2>Visual Reporting</h2>
-        <p><strong>Visual Intelligence & Logistics Control</strong> – Beyond Photography. Towards Standardization.</p>
-        <p>Ovo nije umetnost – ovo je operativna sigurnost. Pružamo specijalizovanu uslugu vizuelne dokumentacije protoka robe (prijem i otprema) koja služi kao neoboriv dokaz u lancu snabdevanja.</p>
+    <section id="visual-reporting" class="content-block">
+        <span class="section-tag">02. Logistics Documentation</span>
+        <h2 class="section-title" style="color: #fff;">Visual Reporting</h2>
+        
+        <div class="intro-text">
+            Ovo nije umetnost – ovo je <strong>operativna sigurnost</strong>. 
+            Donosimo standardizaciju u vaš lanac snabdevanja.
+        </div>
 
-        <ul>
-            <li><strong>Logistics Transparency:</strong> Vizuelna potvrda stanja robe u realnom vremenu.</li>
-            <li><strong>Risk Mitigation:</strong> Drastično smanjenje troškova nastalih oštećenjima ili reklamacijama.</li>
-            <li><strong>ISO Alignment:</strong> Dokumentacija usklađena sa najvišim standardima kontrole kvaliteta.</li>
-            <li><strong>Professional Reporting:</strong> Mesečni izveštaji koji vašem menadžmentu daju jasnu sliku o operacijama.</li>
-        </ul>
+        <div class="reporting-cards">
+            <div class="report-card">
+                <strong>Transparency</strong>
+                <p style="font-size: 14px; opacity: 0.6;">Vizuelna potvrda stanja robe u realnom vremenu kroz neoboriv foto-zapis.</p>
+            </div>
+            <div class="report-card">
+                <strong>Risk Mitigation</strong>
+                <p style="font-size: 14px; opacity: 0.6;">Drastično smanjenje troškova nastalih oštećenjima ili neosnovanim reklamacijama.</p>
+            </div>
+            <div class="report-card">
+                <strong>Standardization</strong>
+                <p style="font-size: 14px; opacity: 0.6;">Usklađenost sa ISO standardima i profesionalni mesečni izveštaji.</p>
+            </div>
+        </div>
     </section>
 
     <section class="branding-footer">
-        <a href="https://www.imagobygorus.com" target="_blank" class="imago-logo">
+        <a href="#" class="imago-logo">
             <h2>IMAGO BY GORUS</h2>
-            <p>Fine Art & Personal Work</p>
+            <p>Personal Fine Art Work</p>
         </a>
     </section>
 </div>
