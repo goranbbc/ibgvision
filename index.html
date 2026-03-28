@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IBG VISION | Strategic Imaging for Modern Enterprise</title>
+    <title>IBG VISION | Digital Capture & Strategic Imaging</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@300;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,8 +11,8 @@
             --accent-blue: #00d2ff; 
             --text-main: #e0e0e0;
             --text-dim: #888;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.08);
             --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -35,7 +35,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background: rgba(10, 12, 16, 0.7);
+            background: rgba(10, 12, 16, 0.8);
             backdrop-filter: blur(20px);
             margin-bottom: 20px;
             border-radius: 100px;
@@ -43,20 +43,18 @@
             top: 20px;
             z-index: 1000;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .logo-container { display: flex; flex-direction: column; }
         .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; line-height: 1; color: #fff; }
         .logo span { font-weight: 300; color: var(--accent-blue); }
         .logo-subtext { 
-            font-size: 9px; 
-            letter-spacing: 5.5px; 
+            font-size: 8.5px; 
+            letter-spacing: 5px; 
             text-transform: uppercase; 
             color: var(--text-dim); 
-            margin-top: 6px; 
+            margin-top: 7px; 
             font-weight: 700; 
-            opacity: 0.8; 
         }
 
         nav ul { display: flex; list-style: none; gap: 35px; }
@@ -80,39 +78,36 @@
         /* --- HERO --- */
         .hero {
             position: relative;
-            height: 85vh;
+            height: 80vh;
             border-radius: 40px;
             overflow: hidden;
             margin-bottom: 30px;
             border: 1px solid var(--glass-border);
         }
-        .hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); }
+        .hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, var(--bg-dark) 0%, transparent 70%);
+            background: linear-gradient(to top, var(--bg-dark) 0%, transparent 80%);
         }
         .hero-overlay {
             position: absolute;
-            bottom: 100px;
+            bottom: 80px;
             left: 80px;
             z-index: 10;
-            max-width: 900px;
         }
         .hero-overlay h1 { 
-            font-size: clamp(40px, 6vw, 85px); 
+            font-size: clamp(40px, 8vw, 95px); 
             font-weight: 800; 
-            line-height: 0.9;
-            margin-bottom: 25px;
-            letter-spacing: -4px;
-            background: linear-gradient(to right, #fff, var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            line-height: 0.85;
+            margin-bottom: 20px;
+            letter-spacing: -5px;
+            color: #fff;
         }
-        .hero-overlay p { font-size: 22px; font-weight: 300; color: var(--text-dim); letter-spacing: 0.5px; max-width: 600px; }
+        .hero-overlay p { font-size: 18px; font-weight: 300; color: var(--accent-blue); letter-spacing: 4px; text-transform: uppercase; }
 
-        /* --- CONTENT BLOCKS --- */
+        /* --- WHAT WE DO (SERVICES) --- */
         section.content-block {
             padding: 120px 80px;
             background: var(--glass-bg);
@@ -121,57 +116,67 @@
             border: 1px solid var(--glass-border);
         }
         .section-tag { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; color: var(--accent-blue); margin-bottom: 20px; display: block; }
-        h2.section-title { font-size: 48px; font-weight: 700; margin-bottom: 60px; letter-spacing: -2px; color: #fff; }
+        h2.section-title { font-size: 48px; font-weight: 700; margin-bottom: 80px; letter-spacing: -2px; color: #fff; }
 
-        /* --- SERVICES --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; }
-        .service-item h3 { font-size: 16px; font-weight: 800; margin-bottom: 25px; text-transform: uppercase; color: var(--accent-blue); border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; }
-        .service-item p { font-size: 16px; color: var(--text-dim); }
+        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
+        
+        .service-category h3 { 
+            font-size: 14px; 
+            font-weight: 800; 
+            letter-spacing: 5px;
+            margin-bottom: 40px; 
+            text-transform: uppercase; 
+            color: var(--accent-blue); 
+            border-bottom: 1px solid var(--glass-border); 
+            padding-bottom: 15px; 
+        }
 
-        /* --- ABOUT --- */
-        .about-container { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; }
-        .about-text p { font-size: 18px; color: var(--text-dim); margin-bottom: 25px; }
-        .about-text p.highlight { font-size: 26px; color: #fff; font-weight: 600; line-height: 1.3; margin-bottom: 40px; letter-spacing: -1px; }
-        .about-stats { display: flex; flex-direction: column; gap: 40px; border-left: 1px solid var(--glass-border); padding-left: 60px; }
-        .stat-num { font-size: 48px; font-weight: 800; color: var(--accent-blue); line-height: 1; }
-        .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-dim); font-weight: 700; margin-top: 10px; }
+        .service-item { margin-bottom: 40px; }
+        .service-item strong { display: block; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .service-item p { font-size: 15px; color: var(--text-dim); line-height: 1.6; max-width: 450px; }
+
+        /* --- PHILOSOPHY (EVERY PIXEL MATTERS) --- */
+        .philosophy-banner {
+            padding: 150px 80px;
+            text-align: center;
+            background: #fff;
+            color: #000;
+            border-radius: 40px;
+            margin-bottom: 30px;
+        }
+        .philosophy-banner h2 { font-size: clamp(30px, 5vw, 70px); font-weight: 800; letter-spacing: -3px; line-height: 1; margin-bottom: 30px; }
+        .philosophy-banner p { font-size: 18px; max-width: 700px; margin: 0 auto; font-weight: 400; opacity: 0.8; }
 
         /* --- PORTFOLIO --- */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .portfolio-item { position: relative; border-radius: 25px; overflow: hidden; height: 400px; border: 1px solid var(--glass-border); }
-        .portfolio-item.large { grid-column: span 2; height: 600px; }
-        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; filter: grayscale(0.3); }
-        .portfolio-item:hover img { transform: scale(1.03); filter: grayscale(0); }
-        .portfolio-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
-        .portfolio-info span { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-blue); }
-        .portfolio-info h4 { font-size: 24px; font-weight: 600; margin-top: 5px; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .portfolio-item { position: relative; border-radius: 30px; overflow: hidden; height: 450px; border: 1px solid var(--glass-border); }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .portfolio-item:hover img { transform: scale(1.05); }
+        .portfolio-info { position: absolute; bottom: 30px; left: 30px; }
+        .portfolio-info span { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-blue); font-weight: 700; }
+        .portfolio-info h4 { font-size: 22px; font-weight: 600; color: #fff; }
 
         /* --- CONTACT --- */
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
-        .contact-info p { font-size: 18px; color: var(--text-dim); margin-bottom: 40px; }
-        .contact-details a { display: block; font-size: 24px; font-weight: 700; color: #fff; text-decoration: none; margin-bottom: 15px; }
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .contact-details a { display: block; font-size: 32px; font-weight: 700; color: #fff; text-decoration: none; margin-bottom: 10px; letter-spacing: -1px; }
         .contact-details a:hover { color: var(--accent-blue); }
-        .contact-form { display: flex; flex-direction: column; gap: 20px; }
-        .contact-form input, .contact-form textarea { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 20px; border-radius: 15px; color: #fff; outline: none; }
+        .contact-form { display: flex; flex-direction: column; gap: 15px; }
+        .contact-form input, .contact-form textarea { background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); padding: 20px; border-radius: 12px; color: #fff; font-family: inherit; outline: none; transition: 0.3s; }
         .contact-form input:focus { border-color: var(--accent-blue); }
-        .btn-send { background: var(--accent-blue); color: #000; padding: 20px; border: none; border-radius: 15px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: var(--transition); }
-        .btn-send:hover { background: #fff; }
+        .btn-send { background: var(--accent-blue); color: #000; padding: 20px; border: none; border-radius: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+        .btn-send:hover { background: #fff; transform: translateY(-3px); }
 
         /* --- FOOTER --- */
-        .branding-footer { padding: 100px 80px; text-align: center; border-top: 1px solid var(--glass-border); }
-        .imago-logo { text-decoration: none; color: #fff; font-family: 'Montserrat', sans-serif; display: inline-block; }
-        .imago-logo h2 { font-size: 32px; font-weight: 800; letter-spacing: 8px; text-transform: uppercase; }
-        .imago-logo p { font-size: 11px; letter-spacing: 10px; color: var(--text-dim); margin-top: 15px; text-transform: uppercase; }
+        footer { padding: 100px 80px; text-align: center; }
+        .imago-logo { text-decoration: none; color: #fff; opacity: 0.6; transition: 0.3s; }
+        .imago-logo:hover { opacity: 1; }
+        .imago-logo h2 { font-size: 24px; font-weight: 800; letter-spacing: 8px; text-transform: uppercase; }
+        .imago-logo p { font-size: 10px; letter-spacing: 6px; color: var(--text-dim); margin-top: 10px; text-transform: uppercase; }
 
         @media (max-width: 1024px) {
-            header { padding: 15px 30px; width: calc(100% - 40px); }
-            nav, .btn-proposal { display: none; }
-            .hero-overlay { left: 40px; bottom: 60px; }
-            section.content-block { padding: 80px 40px; }
-            .about-container, .contact-container { grid-template-columns: 1fr; gap: 50px; }
-            .about-stats { border-left: none; padding-left: 0; flex-direction: row; flex-wrap: wrap; }
-            .portfolio-grid { grid-template-columns: 1fr; }
-            .portfolio-item.large { grid-column: span 1; height: 400px; }
+            .services-grid, .contact-container, .portfolio-grid { grid-template-columns: 1fr; }
+            section.content-block { padding: 60px 30px; }
+            .hero-overlay { left: 40px; bottom: 40px; }
         }
     </style>
 </head>
@@ -185,116 +190,111 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#what-we-do">What We Do</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <a href="#contact" class="btn-proposal">Request a Shoot</a>
+        <a href="#contact" class="btn-proposal">Request Brief</a>
     </header>
 
     <section class="hero">
-        <img src="112.jpg" alt="IBG Vision Synthesis Photography">
+        <img src="112.jpg" alt="IBG Vision Cover">
         <div class="hero-overlay">
             <h1>EVERY PIXEL<br>MATTERS</h1>
-            <p>Commercial & Industrial Visual Production</p>
+            <p>Industrial & Creative Production</p>
         </div>
     </section>
 
-    <section id="services" class="content-block">
-        <span class="section-tag">01. Specialist Solutions</span>
-        <h2 class="section-title">Photography Services</h2>
+    <section id="what-we-do" class="content-block">
+        <span class="section-tag">01. Operation</span>
+        <h2 class="section-title">What We Do</h2>
+        
         <div class="services-grid">
-            <div class="service-item">
-                <h3>Industrijska dokumentacija</h3>
-                <p>Precizni foto-izveštaji i vizuelna dokumentacija robe. Arhiviranje stanja pošiljki i procesa uz vrhunsku produkciju prilagođenu B2B sektoru.</p>
+            <div class="service-category">
+                <h3>Creative</h3>
+                <div class="service-item">
+                    <strong>PORTRAITS</strong>
+                    <p>Professional headshots, environmental portraits, and team photography for corporate authority.</p>
+                </div>
+                <div class="service-item">
+                    <strong>PRODUCTS</strong>
+                    <p>High-end product imaging for e-commerce, advertising, and industrial catalogs.</p>
+                </div>
+                <div class="service-item">
+                    <strong>EVENTS</strong>
+                    <p>Corporate events, conferences, and high-stakes commercial gatherings.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <h3>Korporativni identitet</h3>
-                <p>Profesionalni portreti, arhitektura i enterijeri. Kreiramo vizuelni autoritet vašeg brenda i tima kroz modernu, monolitnu estetiku.</p>
-            </div>
-            <div class="service-item">
-                <h3>Komercijalna produkcija</h3>
-                <p>Reklamna fotografija proizvoda i kreativni sadržaj. Spajanje arhitektonske preciznosti i studijske estetike za vaše marketinške kampanje.</p>
+
+            <div class="service-category">
+                <h3>Industrial & Logistics</h3>
+                <div class="service-item">
+                    <strong>VISUAL REPORTS</strong>
+                    <p>Comprehensive photo documentation of goods receipt and dispatch for supply chain security.</p>
+                </div>
+                <div class="service-item">
+                    <strong>CONDITION MONITORING</strong>
+                    <p>Unbiased visual proof for quality control and rapid dispute resolution.</p>
+                </div>
+                <div class="service-item">
+                    <strong>DIGITAL CAPTURE</strong>
+                    <p>Precision-focused visual data integration into professional logistics workflows.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="content-block">
-        <span class="section-tag">02. Philosophy</span>
-        <h2 class="section-title">The Monolith Approach</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p class="highlight">IBG Vision nije samo fotografski studio. Mi smo industrijska divizija fokusirana na vizuelnu sintezu kompleksnih sistema.</p>
-                <p>U svetu gde je precizna informacija ključna, mi pružamo beskompromisnu vizuelnu dokumentaciju i strateški identitet. Naš pristup je monolitan: spajamo vrhunsku optiku sa strogim industrijskim protokolima kako bismo kreirali neoborive foto-izveštaje i autoritativne korporativne vizuale.</p>
-                <p>Verujemo da svaki pixel mora imati svrhu – bilo da je u pitanju portret lidera ili vizuelna potvrda pošiljke u logističkom lancu.</p>
-            </div>
-            <div class="about-stats">
-                <div class="stat-item">
-                    <span class="stat-num">100%</span>
-                    <span class="stat-label">Precision Focused</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">B2B</span>
-                    <span class="stat-label">Standardized Logic</span>
-                </div>
-            </div>
-        </div>
+    <section class="philosophy-banner">
+        <h2>STRATEGIC IMAGING</h2>
+        <p>We provide more than photography. We deliver visual authority and industrial precision. In our workflow, there is no room for error because every pixel matters.</p>
     </section>
 
     <section id="portfolio" class="content-block">
-        <span class="section-tag">03. Selected Work</span>
-        <h2 class="section-title">Visual Archive</h2>
+        <span class="section-tag">02. Archive</span>
+        <h2 class="section-title">Selected Work</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-item large">
-                <img src="p1.jpg" alt="Industrial Logistics">
+            <div class="portfolio-item">
+                <img src="p1.jpg" alt="Industrial">
                 <div class="portfolio-info">
                     <span>Industrial</span>
-                    <h4>Logistics Chain Documentation</h4>
+                    <h4>Logistics Evidence</h4>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img src="p2.jpg" alt="Corporate Portrait">
+                <img src="p2.jpg" alt="Corporate">
                 <div class="portfolio-info">
                     <span>Corporate</span>
                     <h4>Executive Identity</h4>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="p3.jpg" alt="Architecture">
-                <div class="portfolio-info">
-                    <span>Architecture</span>
-                    <h4>Infrastructure Synthesis</h4>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="content-block">
-        <span class="section-tag">04. Connection</span>
-        <h2 class="section-title">Initiate Collaboration</h2>
+        <span class="section-tag">03. Contact</span>
+        <h2 class="section-title">Start Project</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <p>Spremni smo za integraciju u vaše operativne procese. Kontaktirajte nas za definisanje protokola snimanja ili retainer ugovora.</p>
+                <p>Available for on-site industrial documentation and studio-grade corporate production.</p>
                 <div class="contact-details">
                     <a href="mailto:office@ibgvision.com">office@ibgvision.com</a>
-                    <p>Belgrade / Novi Sad / On-Site</p>
+                    <p style="color: var(--text-dim); font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">Belgrade / Novi Sad / Europe</p>
                 </div>
             </div>
             <form class="contact-form">
                 <input type="text" placeholder="NAME / COMPANY" required>
                 <input type="email" placeholder="EMAIL ADDRESS" required>
-                <textarea placeholder="PROJECT BRIEF" rows="5"></textarea>
-                <button type="submit" class="btn-send">Send Brief</button>
+                <textarea placeholder="PROJECT BRIEF" rows="4"></textarea>
+                <button type="submit" class="btn-send">Initiate Capture</button>
             </form>
         </div>
     </section>
 
-    <footer class="branding-footer">
+    <footer>
         <a href="https://www.imagobygorus.com" target="_blank" class="imago-logo">
             <h2>IMAGO BY GORUS</h2>
-            <p>Fine Art & Personal Work</p>
+            <p>Personal Work & Fine Art</p>
         </a>
     </footer>
 </div>
