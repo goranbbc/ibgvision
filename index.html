@@ -46,8 +46,8 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .logo-container { display: flex; flex-direction: column; }
-        .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; line-height: 1; color: #fff; text-decoration: none; }
+        .logo-container { display: flex; flex-direction: column; text-decoration: none; }
+        .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; text-transform: uppercase; line-height: 1; color: #fff; }
         .logo span { font-weight: 300; color: var(--accent-blue); }
         .logo-subtext { 
             font-size: 9px; 
@@ -63,13 +63,11 @@
         nav ul li a { text-decoration: none; color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; transition: var(--transition); cursor: pointer; }
         nav ul li a:hover { color: var(--accent-blue); }
 
-        /* Language Switcher Style */
         .lang-switch {
             display: flex;
             gap: 10px;
             border-left: 1px solid var(--glass-border);
             padding-left: 25px;
-            margin-left: 10px;
         }
         .lang-btn {
             background: none;
@@ -142,7 +140,7 @@
         .section-tag { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; color: var(--accent-blue); margin-bottom: 20px; display: block; }
         h2.section-title { font-size: 48px; font-weight: 700; margin-bottom: 60px; letter-spacing: -2px; color: #fff; }
 
-        /* --- WHAT WE DO (SERVICES) --- */
+        /* --- SERVICES --- */
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .service-category h3 { 
             font-size: 14px; 
@@ -165,7 +163,7 @@
         .stat-num { font-size: 48px; font-weight: 800; color: var(--accent-blue); line-height: 1; }
         .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--text-dim); font-weight: 700; margin-top: 10px; }
 
-        /* --- PORTFOLIO --- */
+        /* --- PORTFOLIO GRID --- */
         .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
         .portfolio-item { position: relative; border-radius: 25px; overflow: hidden; height: 400px; border: 1px solid var(--glass-border); }
         .portfolio-item.large { grid-column: span 2; height: 600px; }
@@ -173,18 +171,15 @@
         .portfolio-item:hover img { transform: scale(1.03); filter: grayscale(0); }
         .portfolio-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
         .portfolio-info span { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent-blue); }
-        .portfolio-info h4 { font-size: 24px; font-weight: 600; margin-top: 5px; }
+        .portfolio-info h4 { font-size: 24px; font-weight: 600; margin-top: 5px; color: #fff; }
 
         /* --- CONTACT --- */
         .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
         .contact-info p { font-size: 18px; color: var(--text-dim); margin-bottom: 40px; }
         .contact-details a { display: block; font-size: 24px; font-weight: 700; color: #fff; text-decoration: none; margin-bottom: 15px; }
-        .contact-details a:hover { color: var(--accent-blue); }
         .contact-form { display: flex; flex-direction: column; gap: 20px; }
         .contact-form input, .contact-form textarea { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 20px; border-radius: 15px; color: #fff; outline: none; }
-        .contact-form input:focus { border-color: var(--accent-blue); }
         .btn-send { background: var(--accent-blue); color: #000; padding: 20px; border: none; border-radius: 15px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: var(--transition); }
-        .btn-send:hover { background: #fff; }
 
         /* --- FOOTER --- */
         .branding-footer { padding: 100px 80px; text-align: center; border-top: 1px solid var(--glass-border); }
@@ -194,14 +189,11 @@
 
         @media (max-width: 1024px) {
             header { padding: 15px 30px; width: calc(100% - 40px); }
-            nav ul li:not(.lang-switch-li) { display: none; }
-            .btn-proposal { display: none; }
-            .hero-overlay { left: 40px; bottom: 60px; }
+            nav ul li:not(.lang-li) { display: none; }
             section.content-block { padding: 80px 40px; }
-            .about-container, .contact-container, .services-grid { grid-template-columns: 1fr; gap: 50px; }
-            .about-stats { border-left: none; padding-left: 0; flex-direction: row; flex-wrap: wrap; }
+            .about-container, .contact-container, .services-grid { grid-template-columns: 1fr; }
             .portfolio-grid { grid-template-columns: 1fr; }
-            .portfolio-item.large { grid-column: span 1; height: 400px; }
+            .portfolio-item.large { height: 400px; }
         }
     </style>
 </head>
@@ -209,7 +201,7 @@
 
 <div class="main-card">
     <header>
-        <a href="#" class="logo-container" style="text-decoration: none;">
+        <a href="#" class="logo-container">
             <div class="logo">IBG<span>VISION</span></div>
             <div class="logo-subtext">DIGITAL CAPTURE</div>
         </a>
@@ -219,7 +211,7 @@
                 <li><a href="#about" id="nav-about">About</a></li>
                 <li><a href="#portfolio" id="nav-portfolio">Portfolio</a></li>
                 <li><a href="#contact" id="nav-contact">Contact</a></li>
-                <li class="lang-switch-li">
+                <li class="lang-li">
                     <div class="lang-switch">
                         <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
                         <button class="lang-btn" onclick="setLanguage('sr')">SR</button>
@@ -231,7 +223,7 @@
     </header>
 
     <section class="hero">
-        <img src="112.jpg" alt="IBG Vision Synthesis Photography">
+        <img src="112.jpg" alt="IBG Vision Hero">
         <div class="hero-overlay">
             <h1 id="hero-title">EVERY PIXEL<br>MATTERS</h1>
             <p id="hero-sub">Commercial & Industrial Visual Production</p>
@@ -261,11 +253,11 @@
                 <h3 id="cat-industrial">Industrial & Logistics</h3>
                 <div class="service-sub-item">
                     <strong id="svc-visual-t">VISUAL DOCUMENTATION</strong>
-                    <p id="svc-visual-d">High-precision digital capture of assets during transit. Professional photographic proofing for corporate archives.</p>
+                    <p id="svc-visual-d">High-precision digital capture of assets during transit. Professional photographic proofing.</p>
                 </div>
                 <div class="service-sub-item">
                     <strong id="svc-condition-t">CONDITION MONITORING</strong>
-                    <p id="svc-condition-d">Visual proof for internal and all other quality control and dispute resolution.</p>
+                    <p id="svc-condition-d">Visual proof for quality control and dispute resolution.</p>
                 </div>
             </div>
         </div>
@@ -296,24 +288,38 @@
         <h2 class="section-title" id="title-portfolio">Visual Archive</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item large">
-                <img src="113.jpg" alt="Industrial Logistics">
+                <img src="113.jpg" alt="Logistics">
                 <div class="portfolio-info">
-                    <span id="port-tag-1">Industrial</span>
+                    <span id="port-tag-1">INDUSTRIAL</span>
                     <h4 id="port-title-1">Logistics Chain Documentation</h4>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img src="114.jpg" alt="Corporate Portrait">
+                <img src="114.jpg" alt="Portraits">
                 <div class="portfolio-info">
-                    <span id="port-tag-2">Corporate</span>
-                    <h4 id="port-title-2">Executive Identity</h4>
+                    <span id="port-tag-2">LEADERSHIP</span>
+                    <h4 id="port-title-2">Executive Presence</h4>
                 </div>
             </div>
             <div class="portfolio-item">
-                <img src="115.jpg" alt="Architecture">
+                <img src="115.jpg" alt="Infrastructure">
                 <div class="portfolio-info">
-                    <span id="port-tag-3">Architecture</span>
-                    <h4 id="port-title-3">Infrastructure Assets</h4>
+                    <span id="port-tag-3">INFRASTRUCTURE</span>
+                    <h4 id="port-title-3">Built Environment & Assets</h4>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="product.jpg" alt="Products">
+                <div class="portfolio-info">
+                    <span id="port-tag-4">PRODUCT</span>
+                    <h4 id="port-title-4">Commercial Asset Imaging</h4>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="event.jpg" alt="Events">
+                <div class="portfolio-info">
+                    <span id="port-tag-5">EVENTS</span>
+                    <h4 id="port-title-5">Corporate Ecosystem Coverage</h4>
                 </div>
             </div>
         </div>
@@ -342,7 +348,7 @@
     <footer class="branding-footer">
         <a href="https://www.imagobygorus.com" target="_blank" class="imago-logo">
             <h2>IMAGO BY GORUS</h2>
-            <p id="footer-sub">Fine Art & Personal Work</p>
+            <p id="footer-sub">Fine Art & Signature Photography</p>
         </a>
     </footer>
 </div>
@@ -350,127 +356,73 @@
 <script>
     const translations = {
         'en': {
-            'nav-work': 'What We Do',
-            'nav-about': 'About',
-            'nav-portfolio': 'Portfolio',
-            'nav-contact': 'Contact',
+            'nav-work': 'What We Do', 'nav-about': 'About', 'nav-portfolio': 'Portfolio', 'nav-contact': 'Contact',
             'btn-request': 'Request a Shoot',
-            'hero-title': 'EVERY PIXEL<br>MATTERS',
-            'hero-sub': 'Commercial & Industrial Visual Production',
-            'tag-01': '01. Specialist Solutions',
-            'title-wwd': 'What We Do',
-            'cat-creative': 'Creative',
-            'svc-portraits-t': 'PORTRAITS',
-            'svc-portraits-d': 'Professional headshots, environmental portraits, team photography.',
-            'svc-products-t': 'PRODUCTS',
-            'svc-products-d': 'High-end product photography for e-commerce, advertising, and catalogs.',
-            'svc-events-t': 'EVENTS',
-            'svc-events-d': 'Corporate events, conferences, and commercial gatherings.',
-            'cat-industrial': 'Industrial & Logistics',
-            'svc-visual-t': 'VISUAL DOCUMENTATION',
-            'svc-visual-d': 'High-precision digital capture of assets during transit. Professional photographic proofing for corporate archives.',
-            'svc-condition-t': 'CONDITION MONITORING',
-            'svc-condition-d': 'Visual proof for internal and all other quality control and dispute resolution.',
-            'tag-02': '02. Philosophy',
-            'title-about': 'Strategic Imaging',
+            'hero-title': 'EVERY PIXEL<br>MATTERS', 'hero-sub': 'Commercial & Industrial Visual Production',
+            'tag-01': '01. Specialist Solutions', 'title-wwd': 'What We Do',
+            'cat-creative': 'Creative', 'svc-portraits-t': 'PORTRAITS', 'svc-portraits-d': 'Professional headshots, environmental portraits, team photography.',
+            'svc-products-t': 'PRODUCTS', 'svc-products-d': 'High-end product photography for e-commerce, advertising, and catalogs.',
+            'svc-events-t': 'EVENTS', 'svc-events-d': 'Corporate events, conferences, and commercial gatherings.',
+            'cat-industrial': 'Industrial & Logistics', 'svc-visual-t': 'VISUAL DOCUMENTATION', 'svc-visual-d': 'High-precision digital capture of assets during transit. Professional photographic proofing.',
+            'svc-condition-t': 'CONDITION MONITORING', 'svc-condition-d': 'Visual proof for quality control and dispute resolution.',
+            'tag-02': '02. Philosophy', 'title-about': 'Strategic Imaging',
             'about-p1': 'We provide more than photography. We deliver visual authority and industrial precision. In our workflow, there is no room for error because every pixel matters.',
-            'stat-precision': 'Precision Focused',
-            'stat-logic': 'Standardized Logic',
-            'tag-03': '03. Selected Work',
-            'title-portfolio': 'Visual Archive',
-            'port-tag-1': 'Industrial',
-            'port-title-1': 'Logistics Chain Documentation',
-            'port-tag-2': 'Corporate',
-            'port-title-2': 'Executive Identity',
-            'port-tag-3': 'Architecture',
-            'port-title-3': 'Infrastructure Assets',
-            'tag-04': '04. Connection',
-            'title-contact': 'Initiate Collaboration',
+            'stat-precision': 'Precision Focused', 'stat-logic': 'Standardized Logic',
+            'tag-03': '03. Selected Work', 'title-portfolio': 'Visual Archive',
+            'port-tag-1': 'INDUSTRIAL', 'port-title-1': 'Logistics Chain Documentation',
+            'port-tag-2': 'LEADERSHIP', 'port-title-2': 'Executive Presence',
+            'port-tag-3': 'INFRASTRUCTURE', 'port-title-3': 'Built Environment & Assets',
+            'port-tag-4': 'PRODUCT', 'port-title-4': 'Commercial Asset Imaging',
+            'port-tag-5': 'EVENTS', 'port-title-5': 'Corporate Ecosystem Coverage',
+            'tag-04': '04. Connection', 'title-contact': 'Initiate Collaboration',
             'contact-p': 'Ready for seamless integration into your operational processes. Contact us to define your imaging protocols or discuss retainer agreements.',
             'contact-loc': 'Belgrade / Novi Sad / On-Site',
-            'form-name': 'NAME / COMPANY',
-            'form-email': 'EMAIL ADDRESS',
-            'form-msg': 'PROJECT BRIEF',
-            'btn-send': 'Send Brief',
-            'footer-sub': 'Fine Art & Personal Work'
+            'form-name': 'NAME / COMPANY', 'form-email': 'EMAIL ADDRESS', 'form-msg': 'PROJECT BRIEF', 'btn-send': 'Send Brief',
+            'footer-sub': 'Fine Art & Signature Photography'
         },
         'sr': {
-            'nav-work': 'Usluge',
-            'nav-about': 'O nama',
-            'nav-portfolio': 'Portfolio',
-            'nav-contact': 'Kontakt',
+            'nav-work': 'Usluge', 'nav-about': 'O nama', 'nav-portfolio': 'Portfolio', 'nav-contact': 'Kontakt',
             'btn-request': 'Zakažite snimanje',
-            'hero-title': 'BITAN JE<br>SVAKI PIKSEL',
-            'hero-sub': 'Komercijalna i industrijska vizuelna produkcija',
-            'tag-01': '01. Specijalizovana rešenja',
-            'title-wwd': 'Šta radimo',
-            'cat-creative': 'Kreativni sektor',
-            'svc-portraits-t': 'PORTRETI',
-            'svc-portraits-d': 'Profesionalni poslovni portreti, timske fotografije i realna radna atmosfera',
-            'svc-products-t': 'PROIZVODI',
-            'svc-products-d': 'Fotografije proizvoda za e-commerce, oglašavanje i kataloge.',
-            'svc-events-t': 'DOGAĐAJI',
-            'svc-events-d': 'Korporativni događaji, konferencije i komercijalni skupovi.',
-            'cat-industrial': 'Industrija i Logistika',
-            'svc-visual-t': 'VIZUELNA DOKUMENTACIJA',
-            'svc-visual-d': 'Digitalno beleženje prijema i isporuke robe uz pristup digitalnoj arhivi',
-            'svc-condition-t': 'MONITORING STANJA',
-            'svc-condition-d': 'Vizuelni dokazi za internu kontrolu kvaliteta i rešavanje sporova.',
-            'tag-02': '02. Filozofija',
-            'title-about': 'Strateška fotografija',
+            'hero-title': 'SVAKI PIKSEL<br>JE BITAN', 'hero-sub': 'Komercijalna i industrijska vizuelna produkcija',
+            'tag-01': '01. Specijalizovana rešenja', 'title-wwd': 'Šta radimo',
+            'cat-creative': 'Kreativni sektor', 'svc-portraits-t': 'PORTRETI', 'svc-portraits-d': 'Profesionalni poslovni portreti, ambijentalno snimanje timova.',
+            'svc-products-t': 'PROIZVODI', 'svc-products-d': 'Vrhunska produkt fotografija za e-commerce, oglašavanje i kataloge.',
+            'svc-events-t': 'DOGAĐAJI', 'svc-events-d': 'Korporativni događaji, konferencije i komercijalni skupovi.',
+            'cat-industrial': 'Industrija i Logistika', 'svc-visual-t': 'VIZUELNA DOKUMENTACIJA', 'svc-visual-d': 'Digitalno beleženje stanja robe u tranzitu visokom preciznošću. Profesionalna arhiva.',
+            'svc-condition-t': 'MONITORING STANJA', 'svc-condition-d': 'Vizuelni dokazi za kontrolu kvaliteta i rešavanje sporova.',
+            'tag-02': '02. Filozofija', 'title-about': 'Strateško snimanje',
             'about-p1': 'Pružamo više od same fotografije. Donosimo vizuelni autoritet i industrijsku preciznost. U našem radu nema mesta za greške jer je svaki piksel bitan.',
-            'stat-precision': 'Fokus na preciznost',
-            'stat-logic': 'Standardizovana logika',
-            'tag-03': '03. Izabrani radovi',
-            'title-portfolio': 'Vizuelna arhiva',
-            'port-tag-1': 'Industrija',
-            'port-title-1': 'Logistička dokumentacija',
-            'port-tag-2': 'Korporativno',
-            'port-title-2': 'korporativni identitet',
-            'port-tag-3': 'Arhitektura',
-            'port-title-3': 'Infrastrukturni objekti',
-            'tag-04': '04. Povezivanje',
-            'title-contact': 'Pozovite nas',
+            'stat-precision': 'Fokus na preciznost', 'stat-logic': 'Standardizovana logika',
+            'tag-03': '03. Izabrani radovi', 'title-portfolio': 'Vizuelna arhiva',
+            'port-tag-1': 'INDUSTRIJA', 'port-title-1': 'Dokumentacija logističkog lanca',
+            'port-tag-2': 'LIDERSTVO', 'port-title-2': 'Liderski autoritet',
+            'port-tag-3': 'INFRASTRUKTURA', 'port-title-3': 'Izgrađena sredina i resursi',
+            'port-tag-4': 'PROIZVODI', 'port-title-4': 'Komercijalno snimanje proizvoda',
+            'port-tag-5': 'DOGAĐAJI', 'port-title-5': 'Pokrivanje korporativnih događaja',
+            'tag-04': '04. Povezivanje', 'title-contact': 'Pokrenite saradnju',
             'contact-p': 'Spremni smo za integraciju u vaše operativne procese. Kontaktirajte nas za definisanje protokola snimanja ili retainer ugovora.',
             'contact-loc': 'Beograd / Novi Sad / Na terenu',
-            'form-name': 'IME / KOMPANIJA',
-            'form-email': 'EMAIL ADRESA',
-            'form-msg': 'OPIS PROJEKTA',
-            'btn-send': 'Pošaljite upit',
-            'footer-sub': 'Umetnička fotografija i lični radovi'
+            'form-name': 'IME / KOMPANIJA', 'form-email': 'EMAIL ADRESA', 'form-msg': 'OPIS PROJEKTA', 'btn-send': 'Pošaljite upit',
+            'footer-sub': 'Premium umetnička fotografija i autorski radovi'
         }
     };
 
     function setLanguage(lang) {
-        // Promeni tekst za sve elemente sa ID-jem
         for (let id in translations[lang]) {
             const el = document.getElementById(id);
             if (el) {
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                    el.placeholder = translations[lang][id];
-                } else {
-                    el.innerHTML = translations[lang][id];
-                }
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = translations[lang][id];
+                else el.innerHTML = translations[lang][id];
             }
         }
-
-        // Ažuriraj aktivno dugme
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.remove('active');
             if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
         });
-
-        // Sačuvaj izbor u lokalnu memoriju
         localStorage.setItem('selectedLang', lang);
-        document.documentElement.lang = lang;
     }
 
-    // Provera pri učitavanju
-    window.onload = () => {
-        const savedLang = localStorage.getItem('selectedLang') || 'en';
-        setLanguage(savedLang);
-    };
+    window.onload = () => { setLanguage(localStorage.getItem('selectedLang') || 'en'); };
 </script>
-
 </body>
 </html>
