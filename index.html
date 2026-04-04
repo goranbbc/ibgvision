@@ -330,10 +330,10 @@
                     <p id="contact-loc">Belgrade / Novi Sad / On-Site</p>
                 </div>
             </div>
-            <form class="contact-form">
-                <input type="text" id="form-name" placeholder="NAME / COMPANY" required>
-                <input type="email" id="form-email" placeholder="EMAIL ADDRESS" required>
-                <textarea id="form-msg" placeholder="PROJECT BRIEF" rows="5"></textarea>
+            <form class="contact-form" action="https://formspree.io/f/mykbbjgr" method="POST">
+                <input type="text" name="name" id="form-name" placeholder="NAME / COMPANY" required>
+                <input type="email" name="email" id="form-email" placeholder="EMAIL ADDRESS" required>
+                <textarea name="message" id="form-msg" placeholder="PROJECT BRIEF" rows="5" required></textarea>
                 <button type="submit" class="btn-send" id="btn-send">Send Brief</button>
             </form>
         </div>
@@ -420,7 +420,7 @@
             'title-about': 'Strateška fotografija',
             'about-p1': 'Pružamo više od same fotografije. Donosimo vizuelni autoritet i industrijsku preciznost. U našem radu nema mesta za greške jer je svaki piksel bitan.',
             'stat-precision': 'Fokus na preciznost',
-            'stat-logic': 'Standardizovana logika',
+            'stat-logic': 'Standardized Logic',
             'tag-03': '03. Izabrani radovi',
             'title-portfolio': 'Vizuelna arhiva',
             'port-tag-1': 'Industrija',
