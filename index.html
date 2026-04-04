@@ -63,7 +63,6 @@
         nav ul li a { text-decoration: none; color: #fff; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; transition: var(--transition); cursor: pointer; }
         nav ul li a:hover { color: var(--accent-blue); }
 
-        /* Language Switcher Style */
         .lang-switch {
             display: flex;
             gap: 10px;
@@ -142,7 +141,7 @@
         .section-tag { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 4px; color: var(--accent-blue); margin-bottom: 20px; display: block; }
         h2.section-title { font-size: 48px; font-weight: 700; margin-bottom: 60px; letter-spacing: -2px; color: #fff; }
 
-        /* --- WHAT WE DO (SERVICES) --- */
+        /* --- SERVICES --- */
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .service-category h3 { 
             font-size: 14px; 
@@ -331,6 +330,7 @@
                 </div>
             </div>
             <form class="contact-form" action="https://formspree.io/f/mykbbjgr" method="POST">
+                <input type="hidden" name="_next" value="https://ibgvision.com">
                 <input type="text" name="name" id="form-name" placeholder="NAME / COMPANY" required>
                 <input type="email" name="email" id="form-email" placeholder="EMAIL ADDRESS" required>
                 <textarea name="message" id="form-msg" placeholder="PROJECT BRIEF" rows="5" required></textarea>
@@ -442,7 +442,6 @@
     };
 
     function setLanguage(lang) {
-        // Promeni tekst za sve elemente sa ID-jem
         for (let id in translations[lang]) {
             const el = document.getElementById(id);
             if (el) {
@@ -453,19 +452,14 @@
                 }
             }
         }
-
-        // Ažuriraj aktivno dugme
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.remove('active');
             if (btn.innerText.toLowerCase() === lang) btn.classList.add('active');
         });
-
-        // Sačuvaj izbor u lokalnu memoriju
         localStorage.setItem('selectedLang', lang);
         document.documentElement.lang = lang;
     }
 
-    // Provera pri učitavanju
     window.onload = () => {
         const savedLang = localStorage.getItem('selectedLang') || 'en';
         setLanguage(savedLang);
